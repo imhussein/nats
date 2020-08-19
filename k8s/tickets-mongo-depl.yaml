@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tickets-mongo-cluster-ip-srv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-tickets
+  template:
+    metadata:
+      labels:
+        app: mongo-tickets
+    spec:
+      containers:
+        - name: mongo-tickets
+          image: mongo
+          ports:
+            - containerPort: 27017
