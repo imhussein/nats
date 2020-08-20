@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-cluster-ip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: orders
+  ports:
+    - name: orders-srv
+      port: 3000
+      targetPort: 3000
+      protocol: TCP

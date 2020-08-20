@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ticket-mongo-depl
+  name: orders-mongo-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo-tickets
+      app: orders-mongo
   template:
     metadata:
       labels:
-        app: mongo-tickets
+        app: orders-mongo
     spec:
       containers:
-        - name: mongo-tickets
+        - name: orders-mongo
           image: mongo
           ports:
             - containerPort: 27017

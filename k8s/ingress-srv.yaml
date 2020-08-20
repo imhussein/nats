@@ -18,3 +18,7 @@ spec:
             backend:
               serviceName: tickets-cluster-ip-srv
               servicePort: 3000
+          - path: /api/orders/?(.*)
+            backend:
+              serviceName: orders-cluster-ip-srv
+              servicePort: 3000
